@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="./images/calculator-icon.png">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+
+    <title>Nutrition</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <p>
+            GET<br>
+            Gasto energético total
+        </p>
+
+    </header>
+
+    <article>
+
+        O Gasto Energético Total (GET) é a quantidade de energia ou calorias<br>
+        que uma pessoa precisa para garantir o bom desempenho de
+        atividades fundamentais<br> como respiração, circulação sanguínea,
+        digestão de alimentos e atividades físicas.
+
+    </article>
+
+    <main id="beforeCalculate">
+
+        <div>
+
+            <h3>Gênero</h3>
+
+            <div class="custom-radio">
+
+                <input id="woman" name="question" value="1" onclick="functionwoman()" type="radio">
+                <label for="woman">Mulher</label>
+
+            </div>
+
+            <div class="custom-radio">
+
+                <input id="men" name="question" value="0" onclick="functionmen()" type="radio">
+                <label for="men">Homen</label>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        <div class="fatherInputContainer">
+            
+            <h3>peso</h3>
+            <div class="inputContainer"><br>
+    
+                <input type="number" name="weight" id="weight" placeholder="Peso">
+                <p>kg</p>
+    
+            </div>
+
+        </div>
+
+
+        <div class="fatherInputContainer">
+
+            <h3>Altura</h3>
+            <div class="inputContainer">
+
+                <input type="number" name="height" id="height" placeholder="Altura">
+                <p>cm</p>
+
+            </div>
+
+        </div>
+
+        <div class="fatherInputContainer">
+
+            <h3>Idade</h3>
+            <div class="inputContainer">
+
+                <input type="number" name="age" id="age" placeholder="Idade">
+                <p>anos</p>
+
+            </div>
+
+        </div>
+
+        <div class="fatherInputContainer">
+
+            <h3>Nível de atividade física</h3>
+
+            <select>
+
+                <option value="1.2">
+                    Sedentário
+                </option>
+
+                <option value="1.375">
+                    Levemente ativo (Exercício 1-2 vezes por semana)
+                </option>
+
+                <option value="1.55">
+                    Atividade moderada (Exercício 3-5 vezes por semana)
+                </option>
+
+                <option value="1.725">
+                    Atividade intensa (Exercício 6-7 vezes por semana)
+                </option>
+
+                <option value="1.9">
+                    Atleta (Exercício 2 vezes por dia)
+                </option>
+
+            </select>
+
+        </div>
+
+        <button onclick="calculate()">Calcular</button>
+
+    </main>
+
+    <main id="afterCalculate">
+
+        <div id="containerKcalAndImc">
+
+            <section id="boxKcal">
+
+                <p>GET (gasto energético total)</p>
+
+                calorias por dia : <span></span>
+                <br>
+                calorias por semana : <span></span>
+
+            </section>
+
+            <section id="boxImc">
+
+                <h4>
+                    IMC (índice de massa corporal) : <span></span><br>
+                </h4>
+
+                <li>
+                    <18,5 <p> Abaixo do peso </p>
+                </li>
+
+                <li>
+                    18,5 - 24,99 <p> Peso normal </p>
+                </li>
+
+                <li>
+                    25 - 29,99 <p> Excesso de peso </p>
+                </li>
+
+                <li>
+                    >30 <p> Obesidade </p>
+                </li>
+
+            </section>
+
+        </div>
+
+        <h1>Macronutrientes</h1>
+
+        <section>
+
+            <div id="macroTitlesFather">
+
+                <div id="macroTitle1" onclick="dietCutting()">Perda de peso</div>
+                <div id="macroTitle2" onclick="dietMaintenance()">Manutenção</div>
+                <div id="macroTitle3" onclick="dietBulking()">Ganho de peso</div>
+
+            </div>
+
+            <div id="targetFather">
+                Alvo: <div id="target"></div>
+            </div>
+
+            <div id="alignFatherContainerMacroNutrients">
+
+                <div class="fatherContainerMacroNutrients">
+                    Low Carb<br>30/50/20
+
+                    <div class="containerMacroNutrients">
+
+                        <div id="macroProtein1"></div>
+
+                        <div id="macroFat1"></div>
+
+                        <div id="macroCarb1"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="fatherContainerMacroNutrients">
+                    Medium Carb<br>25/50/35
+
+                    <div class="containerMacroNutrients">
+
+                        <div id="macroProtein2"></div>
+
+                        <div id="macroFat2"></div>
+
+                        <div id="macroCarb2"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="fatherContainerMacroNutrients">
+                    High Carb<br>20/30/50
+
+                    <div class="containerMacroNutrients">
+
+                        <div id="macroProtein3"></div>
+
+                        <div id="macroFat3"></div>
+
+                        <div id="macroCarb3"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        
+        <a>
+            linkedln:<span></span>
+        </a>
+
+        <a href="https://github.com/Ninodev30" target="_blank">
+            github: <span>Ninodev30</span>
+        </a>
+
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+
+</body>
+
+</html>
